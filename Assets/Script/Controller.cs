@@ -23,5 +23,6 @@ public class Controller : MonoBehaviour
     {
         ball.Reset();
         ShowGameEndScreen();
+        playing=true;
     }
 }

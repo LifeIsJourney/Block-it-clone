@@ -23,12 +23,13 @@ public class Ball : MonoBehaviour
         speed = new Vector2(Random.Range(-startingMinMaxXForce, startingMinMaxXForce),
             Random.Range(startingMinMaxYForce.x, startingMinMaxYForce.y));
         rgbd.AddForce(speed,ForceMode2D.Impulse);
+        controller.playing = true;
        // rgbd.velocity = speed;
     }
    
-    private void Update()
+    private void FixedUpdate()
     {
-        //  Debug.Log("vel -- "+ rgbd.velocity);
+         Debug.Log("vel -- "+ transform.position.y);
         if (transform.position.y < -4.7f && controller.playing) { controller.ShowGameEndScreen();controller.playing = false; }
     }
     public void Increment()
